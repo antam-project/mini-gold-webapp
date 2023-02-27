@@ -21,13 +21,13 @@ class ProdukController extends Controller
         }
 
         $groups = DB::table(DB::raw("(select 0 as weight,
-            0 as group,
+            0 as group_none,
             (select count(*) from products p where qr_group_id = 1) as total,
             (select count(*) from products p where qr_group_id = 1 and p.available = true) as ready
             union
             select distinct weight,
             (select count(distinct qr_group_id)  from products p
-            where not qr_group_id = 1 and weight = p.weight) as group,
+            where not qr_group_id = 1 and weight = p.weight) as group_type,
             (select count(*) from products p where not qr_group_id = 1 and weight = p.weight) as total,
             (select count(*) from products p where not qr_group_id = 1 and weight = p.weight and p.available = true) as ready
             from products p
