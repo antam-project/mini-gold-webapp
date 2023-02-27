@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScrapperController;
 use App\Models\Master\MasterProduct;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QRController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,5 +72,9 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 })->name('admin');
+
+
+Route::get('qr_code/index',[QRController::class,'index'])->name('qrcode.index');
+Route::get('qr_code/create',[QRController::class,'create'])->name('qrcode.create');
 
 require __DIR__ . '/auth.php';
