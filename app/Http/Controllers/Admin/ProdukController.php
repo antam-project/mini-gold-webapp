@@ -21,13 +21,13 @@ class ProdukController extends Controller
         }
 
         $groups = DB::table(DB::raw("(select 0 as weight,
-            0 as group,
+            0 as group_none,
             (select count(*) from products p where qr_group_id = 1) as total,
             (select count(*) from products p where qr_group_id = 1 and p.available = true) as ready
             union
             select distinct weight,
             (select count(distinct qr_group_id)  from products p
-            where not qr_group_id = 1 and weight = p.weight) as group,
+            where not qr_group_id = 1 and weight = p.weight) as group_type,
             (select count(*) from products p where not qr_group_id = 1 and weight = p.weight) as total,
             (select count(*) from products p where not qr_group_id = 1 and weight = p.weight and p.available = true) as ready
             from products p
@@ -47,11 +47,11 @@ class ProdukController extends Controller
 
     public function addPage()
     {
-        $prices = DB::table('master_gold')
+        $prices = DB::table('master_gold as m')
             ->selectRaw('weight')
-            ->selectRaw(' (select mg.price1 from master_gold mg where mg.weight = "master_gold".weight limit 1) as price1 ')
-            ->selectRaw(' (select mg.price2 from master_gold mg where mg.weight = "master_gold".weight limit 1) as price2 ')
-            ->selectRaw(' (select mg.price3 from master_gold mg where mg.weight = "master_gold".weight limit 1) as price3 ')
+            ->selectRaw(' (select mg.price1 from master_gold mg where mg.weight = m.weight limit 1) as price1 ')
+            ->selectRaw(' (select mg.price2 from master_gold mg where mg.weight = m.weight limit 1) as price2 ')
+            ->selectRaw(' (select mg.price3 from master_gold mg where mg.weight = m.weight limit 1) as price3 ')
             ->distinct()
             ->groupBy('weight')
             ->paginate(10);

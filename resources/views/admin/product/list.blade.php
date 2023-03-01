@@ -68,7 +68,7 @@
                                         @endif
                                     </td>
                                     <td class="py-4 px-6">
-                                        {{$group->group}}
+                                        {{$group->group_none}}
                                     </td>
                                     <td class="py-4 px-6">
                                         {{$group->total}}

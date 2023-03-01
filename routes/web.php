@@ -71,6 +71,11 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    Route::get('purchase', function () {
+        return view('admin.purchase.purchase');
+    })->name('admin.purchase');
+
 })->name('admin');
 
 
