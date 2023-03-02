@@ -6,7 +6,6 @@
     </x-slot>
     <div class="ml-64 py-12">
         <div class=" mx-auto sm:px-6 lg:px-8 d-flex justify-content-between">
-            
             <form class="grid grid-cols-6 gap-4" method="get" action="{{route('admin.purchase')}}">
                 <div class="relative col-span-3">
                     <label for="selected" class="form-label text-sm">Vendor*</label><br>
@@ -189,32 +188,97 @@
 
                     <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Tambah</button>
 
-                    <div class="container mx-auto sm:px-6 lg:px-8">
-                        <div class="relative col-span-3">
-                            <div>
-                            <label for="textarea" class="form-label text-sm">Message</label><br>
-                            <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                    <div class="sm:px-6 lg:px-8 d-flex">
+                        <form class="grid grid-cols-2 gap-4" action="{{route('admin.purchase')}}">
+                            <div class="relative col-span-1 row">
+                                <label for="textarea" class="form-label text-sm">Message</label><br>
+                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                             </div>
 
-                            <div>
-                            <label for="textarea" class="form-label text-sm">Memo</label><br>
-                            <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            <div class="relative col-span-1">
+                                <label for="textarea" class="form-label text-sm">Memo</label><br>
+                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                             </div>
 
-                            <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 input-group mb-3">
+                            <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 input-group row">
                                 <label class="input-group-text" for="inputGroupFile01">Attachments</label>
                                 <input type="file" class="form-control" id="inputGroupFile01">
                             </div>
-                        </div>
 
-                        <div class="relative col-span-3">
-                            <p>
-                                Subtotal                                    Rp. 0,00
-                            </p>
-                            <p>
-                                Discount per Lines                          Rp. 0,00
-                            </p>
-                        </div>
+                            <div class="cols-span-1 row">
+                                <div>
+                                    Sub Total
+                                </div>
+                            </div>
+
+                            <div class="cols-span-1">
+                                <div class="text-end">
+                                    Rp. 0,00
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3 row">
+                                <div>
+                                    Discount per Lines
+                                </div>
+                            </div>
+                            
+                            <div class="cols-span-3">
+                                <div class="text-end">
+                                    Rp. 0,00
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3 row">
+                                <div>
+                                    <label for="textarea" class="form-label text-sm">Discount (%)</label><br>
+                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3">
+                                <div class="text-end">
+                                    Rp. 0,00
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3 row">
+                                <div>
+                                    Total
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3">
+                                <div class="text-end">
+                                    Rp. 0,00
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3 row">
+                                <div>
+                                    Deposit
+                                </div>
+                            </div>
+                            
+                            <div class="cols-span-3">
+                                <div>
+                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                </div>
+                            </div>
+                            
+                            <div class="cols-span-3 row">
+                                <div class="fs-3 fw-bold">
+                                    Balance Due
+                                </div>
+                            </div>
+
+                            <div class="cols-span-3">
+                                <div class="text-end fw-bold">
+                                    Rp. 0,00
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
