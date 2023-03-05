@@ -6,7 +6,7 @@
     </x-slot>
     <div class="ml-64 py-12">
         <div class=" mx-auto sm:px-6 lg:px-8 d-flex justify-content-between">
-            <form class="grid grid-cols-6 gap-4" method="get" action="{{route('admin.purchase')}}">
+            <form class="grid grid-cols-6 gap-4" method="get" >
                 <div class="relative col-span-3">
                     <label for="selected" class="form-label text-sm">Vendor*</label><br>
                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
@@ -25,7 +25,7 @@
 
                 <div class="relative col-span-3 row">
                     <label for="textarea" class="form-label text-sm">Vendor Address</label><br>
-                    <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="2 "></textarea>
                 </div>
 
                 <div class="relative col-span-3 p-8 d-flex">
@@ -63,7 +63,7 @@
 
                 <div class="relative col-span-3 row">
                     <label for="selected" class="form-label text-sm">Transaction No</label><br>
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                    <input type="text" placeholder="[Auto]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                 </div>
 
                 <div class="relative col-span-3">
@@ -87,13 +87,13 @@
                         <option value="E">E</option>
                     </select>
                 </div>
-                
+
                 <div class="form-check form-switch col-span-4 row d-flex justify-content-end">
                     <label class="form-check-label text-sm" for="flexSwitchCheckChecked">Price Include tax</label>
                     <input class="form-check-input" type="checkbox" role="switch">
                 </div>
-            </form> 
-    </div> 
+            </form>
+    </div>
     <div>
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900">
@@ -145,11 +145,11 @@
                                         <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
                                 </td>
 
-                                <td class="py-4 px-1"> 
+                                <td class="py-4 px-1">
                                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                                 </td>
 
-                                <td class="py-4 px-1"> 
+                                <td class="py-4 px-1">
                                     <select id="weight" name="weight" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                                         <option selected disabled value="null"></option>
                                         <option value="A">A</option>
@@ -160,11 +160,11 @@
                                     </select>
                                 </td>
 
-                                <td class="py-4 px-1"> 
-                                    <input type="text" placeholder="Rp. 0,00" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                <td class="py-4 px-1">
+                                    <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                                 </td>
 
-                                <td class="py-4 px-1"> 
+                                <td class="py-4 px-1">
                                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                                 </td>
 
@@ -180,7 +180,7 @@
                                 </td>
 
                                 <td class="py-4 px-1">
-                                    <input type="text" placeholder="Rp. 0,00" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                    <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                                 </td>
                             </tr>
                         </tbody>
@@ -189,7 +189,7 @@
                     <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Tambah</button>
 
                     <div class="sm:px-6 lg:px-8 d-flex">
-                        <form class="grid grid-cols-2 gap-4" action="{{route('admin.purchase')}}">
+                        <form class="grid grid-cols-2 gap-4" >
                             <div class="relative col-span-1 row">
                                 <label for="textarea" class="form-label text-sm">Message</label><br>
                                 <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
@@ -222,7 +222,7 @@
                                     Discount per Lines
                                 </div>
                             </div>
-                            
+
                             <div class="cols-span-3">
                                 <div class="text-end">
                                     Rp. 0,00
@@ -259,13 +259,13 @@
                                     Deposit
                                 </div>
                             </div>
-                            
+
                             <div class="cols-span-3">
                                 <div>
                                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                                 </div>
                             </div>
-                            
+
                             <div class="cols-span-3 row">
                                 <div class="fs-3 fw-bold">
                                     Balance Due

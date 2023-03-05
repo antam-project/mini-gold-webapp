@@ -9,6 +9,7 @@ use App\Http\Controllers\ScrapperController;
 use App\Models\Master\MasterProduct;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRController;
+use App\Http\Controllers\Admin\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,9 +73,12 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::get('purchase', function () {
-        return view('admin.purchase.purchase');
-    })->name('admin.purchase');
+    Route::prefix('purchase')->group(function () {
+        Route::get('', [PurchaseController::class, 'invoice'])->name('admin.purchase.invoice');
+        Route::get('invoice', [PurchaseController::class, 'invoice'])->name('admin.purchase.invoice');
+        Route::get('delivery', [PurchaseController::class, 'delivery'])->name('admin.purchase.delivery');
+
+    });
 
 })->name('admin');
 
