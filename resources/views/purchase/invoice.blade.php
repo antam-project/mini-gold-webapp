@@ -1,10 +1,10 @@
-<x-app-admin-layout>
+<x-app-layout>
     <x-slot name="header">
-        <h2 class=" pl-64 font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class=" font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Create Purchase Invoice') }}
         </h2>
     </x-slot>
-    <div class="ml-64 py-12">
+    <div>
         <div class=" mx-auto sm:px-6 lg:px-8 d-flex justify-content-between">
             <form class="grid grid-cols-6 gap-4" method="get" >
                 <div class="relative col-span-3">
@@ -284,4 +284,4 @@
             </div>
         </div>
     </div>
-</x-app-admin-layout>
+</x-app-layout>

@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -10,9 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 class PurchaseController extends Controller
 {
     public function invoice(Request $request) {
-        return view('admin.purchase.invoice');
+        return view('purchase.invoice');
     }
     public function delivery(Request $request) {
-        return view('admin.purchase.delivery');
+        return view('purchase.delivery');
     }
 }

@@ -9,7 +9,7 @@ use App\Http\Controllers\ScrapperController;
 use App\Models\Master\MasterProduct;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRController;
-use App\Http\Controllers\Admin\PurchaseController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,14 +73,18 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::prefix('purchase')->group(function () {
-        Route::get('', [PurchaseController::class, 'invoice'])->name('admin.purchase.invoice');
-        Route::get('invoice', [PurchaseController::class, 'invoice'])->name('admin.purchase.invoice');
-        Route::get('delivery', [PurchaseController::class, 'delivery'])->name('admin.purchase.delivery');
+    Route::get('/sales', function () {
+        return view('admin.sales');
+    })->name('admin.sales');
 
-    });
 
 })->name('admin');
+
+Route::prefix('purchase')->group(function () {
+    Route::get('', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
+    Route::get('invoice', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
+    Route::get('delivery', [PurchaseController::class, 'delivery'])->name('purchase.delivery');
+});
 
 
 Route::get('qr_code/index',[QRController::class,'index'])->name('qrcode.index');
