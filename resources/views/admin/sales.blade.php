@@ -4,9 +4,9 @@
             {{ __('Create Sales Invoice') }}
         </h2>
     </x-slot>
-    <div class="ml-64 py-5 container">
-        <div class="row">
-            <div class="col">
+    <div class="ml-64 py-5">
+        <div class="row grid grid-cols-2 gap-3">
+            <div class="col-span-1">
                 <div>
                     <label for="selected" class="form-label text-sm">Customer</label><br>
                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
@@ -45,33 +45,26 @@
                 </div>
 
                 <div>
-                    <label for="selected" class="form-label text-sm">Tags</label><br>
+                    <label for="selected" class="form-label text-sm">Customer Referensi No</label><br>
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                 </div>
 
                 <div>
-                    <label for="selected" class="form-label text-sm">Werehouse</label><br>
-                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                        <option selected disabled value="null">Select Werehouse</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
+                    <label for="selected" class="form-label text-sm">Tags</label><br>
+                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-span-1">
                 <div>
                     <label for="selected" class="form-label text-sm">Email</label><br>
                     <input type="mail" placeholder="Email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                </div>
+                </div><br><br>
 
                 <div>
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="shipping"/>
                     <label class="form-check-label text-sm" for="inlineCheckbox1">Shipping Info</label>
-                </div>
+                </div><br>
 
                 <div>
                     <label for="textarea" class="form-label text-sm">Due Date</label><br>
@@ -87,9 +80,16 @@
                 </div>
 
                 <div>
-                    <label for="selected" class="form-label text-sm">Vendor Ref No</label><br>
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                </div>
+                    <label for="selected" class="form-label text-sm">Werehouse</label><br>
+                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
+                        <option selected disabled value="null">Select Werehouse</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div><br>
 
                 <div class="form-check form-switch">
                     <label class="form-check-label text-sm" for="flexSwitchCheckChecked">Price Include tax</label>
@@ -97,191 +97,191 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900">
-                <div class="overflow-x-auto relative">
-                    <table class="w-full text-sm text-gray-500 dark:text-gray-400" id="datatables-user">
-                        <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
-                        <tr>
-                            <th scope="col" class="py-3 px-1">
-                                Product
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Description
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Qty
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Units
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Unit Price
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Discount
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Tax
-                            </th>
-                            <th scope="col" class="py-3 px-1">
-                                Amount
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td class="py-10 px-1">
-                                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                                        <option selected disabled value="null">Select Product</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
-                                    </select>
-                                </td>
-
-                                <td class="py-10 px-1">
-                                        <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <select id="weight" name="weight" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                                        <option selected disabled value="null"></option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
-                                    </select>
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                                        <option selected disabled value="null">Select Tax</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
-                                    </select>
-                                </td>
-
-                                <td class="py-4 px-1">
-                                    <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </td>
+        <div>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <div class="overflow-x-auto relative">
+                        <table class="w-full text-sm text-gray-500 dark:text-gray-400" id="datatables-user">
+                            <thead
+                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
+                            <tr>
+                                <th scope="col" class="py-3 px-1">
+                                    Product
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Description
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Qty
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Units
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Unit Price
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Discount
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Tax
+                                </th>
+                                <th scope="col" class="py-3 px-1">
+                                    Amount
+                                </th>
                             </tr>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="py-10 px-1">
+                                        <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
+                                            <option selected disabled value="null">Select Product</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                        </select>
+                                    </td>
 
-                    <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Tambah</button>
+                                    <td class="py-10 px-1">
+                                            <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    </td>
 
-                    <div class="sm:px-6 lg:px-8 d-flex">
-                        <form class="grid grid-cols-2 gap-4" >
-                            <div class="relative col-span-1 row">
-                                <label for="textarea" class="form-label text-sm">Message</label><br>
-                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                    <td class="py-4 px-1">
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                    </td>
+
+                                    <td class="py-4 px-1">
+                                        <select id="weight" name="weight" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
+                                            <option selected disabled value="null"></option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                        </select>
+                                    </td>
+
+                                    <td class="py-4 px-1">
+                                        <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                    </td>
+
+                                    <td class="py-4 px-1">
+                                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                    </td>
+
+                                    <td class="py-4 px-1">
+                                        <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
+                                            <option selected disabled value="null">Select Tax</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                        </select>
+                                    </td>
+
+                                    <td class="py-4 px-1">
+                                        <input type="text" placeholder="Rp. 0,00" class="text-end bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Tambah</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="grid grid-cols-2 gap-4 row">
+                    <div class="col-span-1">
+                        <label for="textarea" class="form-label text-sm">Message</label><br>
+                        <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="textarea" class="form-label text-sm">Memo</label><br>
+                        <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                    </div>
+
+                    <div class="col-span-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 input-group">
+                        <label class="input-group-text" for="inputGroupFile01">Attachments</label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
+                </div><br>
+
+                <div class="grid grid-cols-2 gap-4 row">
+                    <div class="cols-span-1">
+                        <div>
+                            Sub Total
+                        </div>
+
+                        <div>
+                            Discount per Lines
+                        </div>
+
+                        <div>
+                            <label for="textarea" class="form-label text-sm">Discount (%)</label><br>
+                            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                        </div>
+
+                    </div>
+
+                    <div class="cols-span-1">
+                        <div class="text-end">
+                            Rp. 0,00
+                        </div>
+
+                        <div class="text-end">
+                            Rp. 0,00
+                        </div><br><br>
+
+                        <div class="text-end">
+                            Rp. 0,00
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="grid grid-cols-2 gap-4 row">
+                    <div class="cols-span-1">
+                        <div>
+                            Total
+                        </div>
+
+                        <div>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="deposite"/>
+                            <label class="form-check-label" for="inlineCheckbox1">Withholding</label>
+                        </div>
+
+                        <div>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="deposite"/>
+                            <label class="form-check-label" for="inlineCheckbox1">Deposite</label>
+                        </div>
+                    </div>
+
+                    <div class="cols-span-1">
+                        <div class="text-end">
+                            Rp. 0,00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                        <div class="cols-span-1">
+                            <div class="fs-3 text-bold">
+                                Balance Due
                             </div>
+                        </div>
 
-                            <div class="relative col-span-1">
-                                <label for="textarea" class="form-label text-sm">Memo</label><br>
-                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <div class="cols-span-1">
+                            <div class="text-end">
+                                Rp. 0,00
                             </div>
-
-                            <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 input-group row">
-                                <label class="input-group-text" for="inputGroupFile01">Attachments</label>
-                                <input type="file" class="form-control" id="inputGroupFile01">
-                            </div>
-
-                            <div class="cols-span-1 row">
-                                <div>
-                                    Sub Total
-                                </div>
-                            </div>
-
-                            <div class="cols-span-1">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3 row">
-                                <div>
-                                    Discount per Lines
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div>
-                                    <label for="textarea" class="form-label text-sm">Discount (%)</label><br>
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div>
-                                    Total
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                            <div class="cols-span-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="deposite"/>
-                                <label class="form-check-label" for="inlineCheckbox1">Withholding</label>
-                            </div>
-
-                            <div class="cols-span-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="deposite"/>
-                                <label class="form-check-label" for="inlineCheckbox1">Deposite</label>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="fs-3 text-bold">
-                                    Balance Due
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="text-end fw-bold">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
