@@ -231,15 +231,15 @@
                     </div>
 
                     <div class="cols-span-1">
-                        <div class="text-end">
+                        <div>
                             Rp. 0,00
                         </div>
 
-                        <div class="text-end">
+                        <div>
                             Rp. 0,00
-                        </div><br><br>
+                        </div>
 
-                        <div class="text-end">
+                        <div>
                             Rp. 0,00
                         </div>
                     </div>
@@ -263,26 +263,29 @@
                     </div>
 
                     <div class="cols-span-1">
-                        <div class="text-end">
+                        <div>
                             Rp. 0,00
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                        <div class="cols-span-1">
-                            <div class="fs-3 text-bold">
-                                Balance Due
-                            </div>
-                        </div>
-
-                        <div class="cols-span-1">
-                            <div class="text-end">
-                                Rp. 0,00
-                            </div>
+                <div class="grid grid-cols-2 gap-4 row">
+                    <div class="cols-span-1">
+                        <div class="fs-3 text-bold">
+                            Balance Due
                         </div>
                     </div>
+
+                    <div class="cols-span-1">
+                        <div>
+                            Rp. 0,00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Cancel</button>
+                    <button type="submit" class="text-black bg-blue-800 hover:bg-blue-900 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-800 dark:hover:bg-blue-700 dark:focus:ring-blue-700 dark:border-blue-700 col-span-2">Create Invoice</button>
                 </div>
             </div>
         </div>
