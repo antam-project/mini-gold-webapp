@@ -5,17 +5,12 @@
         </h2>
     </x-slot>
     <div class="ml-64 py-5">
-        <div class="row grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3 row">
             <div class="col-span-1">
                 <div>
                     <label for="selected" class="form-label text-sm">Customer</label><br>
                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                         <option selected disabled value="null">Select Contact</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
                     </select>
                 </div>
 
@@ -36,11 +31,6 @@
                     <label for="selected" class="form-label text-sm">Term</label><br>
                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                         <option selected disabled value="null">Custom</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
                     </select>
                 </div>
 

@@ -4,95 +4,149 @@
             {{ __('Create Purchase Invoice') }}
         </h2>
     </x-slot>
-    <div>
-        <div class=" mx-auto sm:px-6 lg:px-8 d-flex justify-content-between">
-            <form class="grid grid-cols-6 gap-4" method="get" >
-                <div class="relative col-span-3">
-                    <label for="selected" class="form-label text-sm">Vendor*</label><br>
-                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                        <option selected disabled value="null">Pilih Vendor</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
-                </div>
-                <div class="relative col-span-3">
-                    <label for="selected" class="form-label text-sm">Email</label><br>
-                    <input type="mail" placeholder="Email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                </div>
-
-                <div class="relative col-span-3 row">
-                    <label for="textarea" class="form-label text-sm">Vendor Address</label><br>
-                    <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="2 "></textarea>
-                </div>
-
-                <div class="relative col-span-3 p-8 d-flex">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="is Shipped?"/>
-                    <label class="form-check-label text-sm" for="inlineCheckbox1">is Shipped?</label>
-                </div>
-
-                <div class="relative col-span-2 row">
-                    <label for="textarea" class="form-label text-sm">Transaction Date</label><br>
-                    <div class="d-inline-flex p-2 absolute items-center">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+    <div class="ml-5 py-6">
+        <div class="mx-auto sm:px-6 lg:px-8">
+            <div class="grid gap-4 grid-cols-2">
+                <div class="col">
+                    <div class="mb-6">
+                        <label for="name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vendor*</label>
+                        <div class="flex">
+                            <select id="name" name="name"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected disabled value="null">Pilih Vendor</option>
+                            </select>
+                        </div>
                     </div>
-                    <input datepicker datepicker-autohide name="date" type="text" placeholder="Pilih tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                </div>
 
-                <div class="relative col-span-2">
-                    <label for="textarea" class="form-label text-sm">Due Date</label><br>
-                    <div class="d-inline-flex p-2 absolute items-center">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                    <div class="mb-6">
+                        <label for="textarea"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vendor Address</label>
+                        <div class="flex">
+                            <textarea id="textarea" name="textarea" rows="2"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            </textarea>
+                        </div>
                     </div>
-                    <input datepicker datepicker-autohide name="date" type="text" placeholder="Pilih tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </div>
 
-                <div class="relative col-span-2">
-                    <label for="selected" class="form-label text-sm">Term</label><br>
-                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                        <option selected disabled value="null">Custom</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
+                <div class="col">
+                    <div class="mb-12">
+                        <label for="mail"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <div class="flex">
+                            <input type="mail" id="mail"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Email" name="mail">
+                        </div>
+                    </div>
+
+                    <div class="mb-6 ml-40 mt-20">
+                        <div class="flex">
+                            <input type="checkbox" id="checkbox"
+                                    class="form-check-input" value=""/>
+                            <label for="inlineCheckbox1"
+                                    class="text-gray-900 text-sm rounded-lg dark:text-white ml-2">is Shipped?</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid gap-4 grid-cols-3">
+                <div class="col mb-6">
+                    <label for="date1"
+                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Transaction Date</label>
+                    <div class="d-inline-flex p-2 absolute items-center">
+                        <svg aria-hidden="true"
+                             class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <input datepicker datepicker-autohide type="text"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           name="date1" placeholder="Pilih tanggal">
                 </div>
 
-                <div class="relative col-span-3 row">
-                    <label for="selected" class="form-label text-sm">Transaction No</label><br>
-                    <input type="text" placeholder="[Auto]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                <div class="col mb-6">
+                    <label for="date2"
+                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Due Date</label>
+                    <div class="d-inline-flex p-2 absolute items-center">
+                        <svg aria-hidden="true"
+                             class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <input datepicker datepicker-autohide type="text"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           name="date2" placeholder="Pilih tanggal">
                 </div>
 
-                <div class="relative col-span-3">
-                    <label for="selected" class="form-label text-sm">Tags</label><br>
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                <div class="col mb-6">
+                    <label  for="term"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Term</label>
+                    <div class="flex">
+                        <select id="term" name="term"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected disabled value="null">Custom</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid gap-4 grid-cols-2">
+                <div class="col">
+                    <div class="mb-6">
+                        <label for="trNo"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Transaction No</label>
+                        <div class="flex">
+                            <input type="text" id="trNo"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                name="trNo" placeholder="[Auto]">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="vrNo"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Vendor Ref No</label>
+                        <div class="flex">
+                            <input type="text" id="vrNo"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                name="vrNo" placeholder="">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="relative col-span-3 row">
-                    <label for="selected" class="form-label text-sm">Vendor Ref No</label><br>
-                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                <div class="col">
+                    <div class="mb-6">
+                        <label for="tags"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tags</label>
+                        <div class="flex">
+                            <input type="text" id="tags"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                name="tags" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="wh"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Werehouse</label>
+                        <div class="flex">
+                            <select id="wh" name="wh"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected disabled value="null">Select Werehouse</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="relative col-span-3">
-                    <label for="selected" class="form-label text-sm">Werehouse</label><br>
-                    <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
-                        <option selected disabled value="null">Select Werehouse</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
+                <div class="row justify-content-end">
+                    <label for="flexSwitchCheckChecked"
+                        class="form-check-label text-sm" >Price Include tax</label>
+                    <input type="checkbox" role="switch"
+                        class="form-check-input">
                 </div>
-
-                <div class="form-check form-switch col-span-4 row d-flex justify-content-end">
-                    <label class="form-check-label text-sm" for="flexSwitchCheckChecked">Price Include tax</label>
-                    <input class="form-check-input" type="checkbox" role="switch">
-                </div>
-            </form>
+            </div>
+        </div>
     </div>
     <div>
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -133,11 +187,6 @@
                                 <td class="py-10 px-1">
                                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                                         <option selected disabled value="null">Select Product</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
                                     </select>
                                 </td>
 
@@ -152,11 +201,6 @@
                                 <td class="py-4 px-1">
                                     <select id="weight" name="weight" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                                         <option selected disabled value="null"></option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
                                     </select>
                                 </td>
 
@@ -171,11 +215,6 @@
                                 <td class="py-4 px-1">
                                     <select id="weight" name="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2">
                                         <option selected disabled value="null">Select Tax</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="D">D</option>
-                                        <option value="E">E</option>
                                     </select>
                                 </td>
 
@@ -187,101 +226,113 @@
                     </table>
 
                     <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 col-span-2">Tambah</button>
+                </div>
+            </div>
+        </div>
 
-                    <div class="sm:px-6 lg:px-8 d-flex">
-                        <form class="grid grid-cols-2 gap-4" >
-                            <div class="relative col-span-1 row">
-                                <label for="textarea" class="form-label text-sm">Message</label><br>
-                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+        <div class="mx-auto sm:px-6 lg:px-8">
+                <div class="grid gap-4 grid-cols-2">
+                    <div class="col">
+                        <div class="mb-6">
+                            <label for="textarea2"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Message</label>
+                            <div class="flex">
+                                <textarea id="textarea2" name="textarea2" rows="3"
+                                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </textarea>
                             </div>
-
-                            <div class="relative col-span-1">
-                                <label for="textarea" class="form-label text-sm">Memo</label><br>
-                                <textarea class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-6">
+                            <label for="textarea3"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Memo</label>
+                            <div class="flex">
+                                <textarea id="textarea3" name="textarea3" rows="3"
+                                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </textarea>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 input-group row">
-                                <label class="input-group-text" for="inputGroupFile01">Attachments</label>
-                                <input type="file" class="form-control" id="inputGroupFile01">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 col-span-2 input-group row">
+                            <label class="input-group-text" for="inputGroupFile01">Attachments</label>
+                            <input type="file" class="form-control" id="inputGroupFile01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-4 grid-cols-2">
+                    <div class="col">
+                        <div class="mb-2">
+                            <p>Sub Total</p>
+                        </div>
+
+                        <div class="mb-2">
+                            <p>Discount per Lines</p>
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="discount"
+                                class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Discount</label>
+                            <div class="flex">
+                                <input type="text" id="discount"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    name="discount" placeholder="">
+                                <span
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-r-md border border-l-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                                    %
+                                </span>
+                                <span
+                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-r-md border border-l-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                                    Rp
+                                </span>
                             </div>
+                        </div>
 
-                            <div class="cols-span-1 row">
-                                <div>
-                                    Sub Total
-                                </div>
-                            </div>
+                        <div class="mb2">
+                            <p>Total</p>
+                        </div>
 
-                            <div class="cols-span-1">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
+                        <div class="mb2">
+                            <p>Deposit</p>
+                        </div>
 
-                            <div class="cols-span-3 row">
-                                <div>
-                                    Discount per Lines
-                                </div>
-                            </div>
+                        <div class="mb-2 fw-bold">
+                            <p>Balance Due</p>
+                        </div>
+                    </div>
 
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
+                    <div class="col">
+                        <div class="mb-2">
+                            <p>Rp. 0,00</p>
+                        </div>
 
-                            <div class="cols-span-3 row">
-                                <div>
-                                    <label for="textarea" class="form-label text-sm">Discount (%)</label><br>
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </div>
-                            </div>
+                        <div class="mb-10">
+                            <p>Rp. 0,00</p>
+                        </div>
 
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
+                        <div class="mb-5">
+                            <p>Rp. 0,00</p>
+                        </div>
 
-                            <div class="cols-span-3 row">
-                                <div>
-                                    Total
-                                </div>
-                            </div>
+                        <div class="mb-2 flex">
+                            <input type="text" id="depo"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    name="depo" placeholder="">
+                        </div>
 
-                            <div class="cols-span-3">
-                                <div class="text-end">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3 row">
-                                <div>
-                                    Deposit
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div>
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p1-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3 row">
-                                <div class="fs-3 fw-bold">
-                                    Balance Due
-                                </div>
-                            </div>
-
-                            <div class="cols-span-3">
-                                <div class="text-end fw-bold">
-                                    Rp. 0,00
-                                </div>
-                            </div>
-
-                        </form>
+                        <div class="mb-2">
+                            <p>Rp. 0,00</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </x-app-layout>
