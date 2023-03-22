@@ -8,8 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScrapperController;
 use App\Models\Master\MasterProduct;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QRController;
 use App\Http\Controllers\PurchaseController;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('qrcode', function () {
+    return QrCode::size(300)->generate('A basic example of QR code!');
 });
 
 Route::prefix('admin')->middleware(['role:Admin'])->group(function () {

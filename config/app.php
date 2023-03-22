@@ -188,7 +188,6 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
         Weidner\Goutte\GoutteServiceProvider::class,
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -215,8 +214,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        'Goutte' => Weidner\Goutte\GoutteFacade::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Goutte' => Weidner\Goutte\GoutteFacade::class
     ])->toArray(),
 
 ];

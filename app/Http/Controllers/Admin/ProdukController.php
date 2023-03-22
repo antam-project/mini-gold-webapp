@@ -47,14 +47,40 @@ class ProdukController extends Controller
 
     public function addPage()
     {
-        $prices = DB::table('master_gold as m')
-            ->selectRaw('weight')
-            ->selectRaw(' (select mg.price1 from master_gold mg where mg.weight = m.weight limit 1) as price1 ')
-            ->selectRaw(' (select mg.price2 from master_gold mg where mg.weight = m.weight limit 1) as price2 ')
-            ->selectRaw(' (select mg.price3 from master_gold mg where mg.weight = m.weight limit 1) as price3 ')
-            ->distinct()
-            ->groupBy('weight')
-            ->paginate(10);
+        $prices = DB::table(DB::raw("select
+                count(*) as aggregate
+            from
+                (
+                select
+                    distinct weight,
+                    (
+                    select
+                        mg.price1
+                    from
+                        master_gold mg
+                    where
+                        mg.weight = master_gold.weight
+                    limit 1) as price1 ,
+                    (
+                    select
+                        mg.price2
+                    from
+                        master_gold mg
+                    where
+                        mg.weight = master_gold.weight
+                    limit 1) as price2 ,
+                    (
+                    select
+                        mg.price3
+                    from
+                        master_gold mg
+                    where
+                        mg.weight = master_gold.weight
+                    limit 1) as price3
+                from
+                    master_gold
+                group by
+                    weight) as aggregate_table"));
 
         return view('admin.product.add')->with('prices', $prices);
     }
