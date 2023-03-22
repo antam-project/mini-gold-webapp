@@ -27,8 +27,8 @@
                             </x-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('purchase.invoice')"
-                                        :active="request()->routeIs('purchase.invoice')">
+                            <x-nav-link href="/chart"
+                                        :active="request()->routeIs('chart')">
                                 {{ __('Keranjang') }}
                             </x-nav-link>
                         </div>

@@ -4,9 +4,13 @@ use App\Http\Controllers\Admin\Master\MasterGoldController;
 use App\Http\Controllers\Admin\Master\MasterProductController;
 use App\Http\Controllers\Admin\ProdukController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\KonfirmasiPembayaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScrapperController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\HomeController;
 use App\Models\Master\MasterProduct;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -22,9 +26,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'welcome'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,6 +36,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::prefix('chart')->group(function () {
+        Route::get('', [ChartController::class, 'list'])->name('pages.chart.list');
+        Route::get('/new', [ChartController::class, 'new'])->name('pages.new.list');
+        Route::get('{id}/update', [ChartController::class, 'updatePage'])->name('admin.user.update.page');
+        Route::patch('{id}/update', [ChartController::class, 'update'])->name('admin.user.update');
+        Route::delete('{id}/delete', [ChartController::class, 'delete'])->name('admin.user.delete');
+    });
+
+    Route::prefix('order')->group(function () {
+        Route::get('', [OrderController::class, 'list'])->name('admin.user.list');
+        Route::get('{id}/update', [OrderController::class, 'updatePage'])->name('admin.user.update.page');
+        Route::patch('{id}/update', [OrderController::class, 'update'])->name('admin.user.update');
+        Route::delete('{id}/delete', [OrderController::class, 'delete'])->name('admin.user.delete');
+    });
 });
 
 Route::get('qrcode', function () {
@@ -51,6 +68,13 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
             Route::post('{idUser}', [UserController::class, 'addRole'])->name('admin.user.role.add');
             Route::delete('{idUser}/{idRole}', [UserController::class, 'deleteRole'])->name('admin.user.role.delete');
         });
+    });
+
+    Route::prefix('konfirmasi-pembayaran')->group(function () {
+        Route::get('', [KonfirmasiPembayaranController::class, 'list'])->name('admin.user.list');
+        Route::get('{id}/update', [KonfirmasiPembayaranController::class, 'updatePage'])->name('admin.user.update.page');
+        Route::patch('{id}/update', [KonfirmasiPembayaranController::class, 'update'])->name('admin.user.update');
+        Route::delete('{id}/delete', [KonfirmasiPembayaranController::class, 'delete'])->name('admin.user.delete');
     });
 
     Route::prefix('master')->group(function () {
@@ -73,14 +97,10 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
     });
 
     Route::get('scrapper', [ScrapperController::class, 'getData']);
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
-
-    Route::get('/sales', function () {
-        return view('admin.sales');
-    })->name('admin.sales');
-
 
 })->name('admin');
 

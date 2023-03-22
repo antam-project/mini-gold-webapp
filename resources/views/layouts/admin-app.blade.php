@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'JakartaMiniGold') }}</title>
+    <title>Admin || Jakarta Minigold</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    {{-- icons --}}
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -33,13 +36,15 @@
                     <li>
                         <a href="{{route('admin.user.list')}}"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 active:bg-gray-100">
-                            <svg aria-hidden="true"
-                                 class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                 fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                      clip-rule="evenodd"></path>
-                            </svg>
+                            <i class="fa-solid fa-user"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Pengguna</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.user.list')}}"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 active:bg-gray-100">
+                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Konfirmasi Pembayaran</span>
                         </a>
                     </li>
                     <li>
@@ -49,7 +54,7 @@
                                 || request()->routeIs('admin.master.gold.list')))
                                     aria-expanded="true"
                                 @endif>
-                            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
+                            <i class="fa-solid fa-database"></i>
                             <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Master Data</span>
                             <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
@@ -71,11 +76,7 @@
                     <li>
                         <a href="{{route('admin.product.list')}}"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
+                            <i class="fa-solid fa-briefcase"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Produk</span>
                         </a>
                     </li>
@@ -98,6 +99,7 @@
 </div>
 <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 <script src="https://unpkg.com/flowbite@1.5.4/dist/datepicker.js"></script>
+<script src="https://kit.fontawesome.com/2845ce3869.js" crossorigin="anonymous"></script>
 @stack('scripts')
 </body>
 </html>

@@ -1,19 +1,17 @@
 <x-guest-layout>
 
-    <div class="grid grid-cols-2">
-    <div class="col-1 bg-blue-80">
+    <div class="d-flex">
+    <div style="width:40%">
         <div>
-            <p>
-                ini banner kiri
-            </p>
+            <img src="assets/banner.jpg" alt="banner kiri">
         </div>
     </div>
-    <div class="cols-2">
+    <div style="width:60%">
         <x-auth-card>
             <x-slot name="logo">
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
+                <div>
+                    <img src="assets/coin.png" alt="banner kiri" width="40">
+                </div>
             </x-slot>
 
             <!-- Session Status -->

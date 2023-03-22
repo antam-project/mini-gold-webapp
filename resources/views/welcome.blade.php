@@ -28,134 +28,24 @@
 
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-            <h2 class="mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 lg:mb-16 dark:text-white md:text-4xl">Top Products</h2>
+            <h2 class="mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 lg:mb-16 dark:text-white md:text-4xl">Our Products</h2>
             <div class="grid grid-cols-4 gap-8 text-gray-500 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 dark:text-gray-400">
+                @foreach($golds as $gold)
                 <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
                     </a>
                     <div class="px-5 pb-5">
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
+                            <h5 class="text-l font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold {{$gold->weight}} gr</h5>
                         </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
+                        <span style="font-size: 20px" class="font-bold text-gray-900 dark:text-white">@currency($gold->price1)</span>
                         <div class="flex items-center justify-between mt-2.5">
-
                             <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="p-8 rounded-t-lg" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-3162972/antam_logam-mulia-1-gram_full03.jpg" alt="product image" />
-                    </a>
-                    <div class="px-5 pb-5">
-                        <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold 0.5 gr</h5>
-                        </a>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Rp. 200.500.522</span>
-                        <div class="flex items-center justify-between mt-2.5">
-
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
