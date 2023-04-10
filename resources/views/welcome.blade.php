@@ -40,9 +40,13 @@
                             <h5 class="text-l font-semibold tracking-tight text-gray-900 dark:text-white">Mini Gold {{$gold->weight}} gr</h5>
                         </a>
                         <span style="font-size: 20px" class="font-bold text-gray-900 dark:text-white">@currency($gold->price1)</span>
-                        <div class="flex items-center justify-between mt-2.5">
-                            <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
-                        </div>
+                            @if(Auth::user())
+                                @if(Auth::user()->hasRoles(['Buyer']))
+                                    <div class="flex items-center justify-between mt-2.5">
+                                        <a id="item" data-id="{{ $gold->id }}" data-header="Mini Gold {{$gold->weight}} gr"  href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Add to cart</a>
+                                    </div>
+                                @endif
+                            @endif
                     </div>
                 </div>
                 @endforeach
@@ -140,4 +144,84 @@
             </div>
         </div>
     </section>
+
+      <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Quantity</h1>
+            </div>
+            <div class="modal-body px-5">
+                <h5 id="header" class="text-l font-semibold tracking-tight text-gray-900 dark:text-white"></h5>
+                <form action="">
+                    <input type="text" class="form-control d-none" id="idgold" readonly>
+                    <input type="number" id="quantity" value="1" min="1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="" name="grouping">
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="submit" class="btn btn-outline-success btn-submit">Add Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </x-app-layout>
+<script>
+    $(document).ready(function(){
+        $(document).on('click', '#item', function(){
+          var source = $(this).data('id');
+          var header = $(this).data('header');
+          $('#idgold').val(source);
+          $('#header').text(header);
+          console.log(source);
+        })
+    })
+</script>
+<script type="text/javascript">
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#submit").click(function(e){
+
+        console.log('begin')
+        e.preventDefault();
+
+        var idgold = $("#idgold").val();
+        var quantity = $("#quantity").val();
+
+        $.ajax({
+           type:'POST',
+           url:"{{ route('action.addToChart') }}",
+           data:{goldid:idgold, quantity:quantity},
+           success:function(data){
+                if($.isEmptyObject(data.error)){
+                    Swal.fire(
+                        'Success!',
+                        'Berhasil memasukan item ke keranjang!',
+                        'success'
+                    );
+                    window.location.reload();
+                }else{
+                    printErrorMsg(data.error);
+                    console.log('error')
+                }
+           }
+        });
+
+    });
+
+    function printErrorMsg (msg) {
+        $(".print-error-msg").find("ul").html('');
+        $(".print-error-msg").css('display','block');
+        $.each( msg, function( key, value ) {
+            $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+        });
+    }
+
+</script>

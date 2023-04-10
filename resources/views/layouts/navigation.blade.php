@@ -19,9 +19,15 @@
                                 {{ __('Dasbor') }}
                             </x-nav-link>
                         </div>
-                    @endif
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('admin.dashboard')"
+                            <x-nav-link href="/admin/invoice"
+                                        :active="request()->routeIs('admin.invoice')">
+                                {{ __('Invoice') }}
+                            </x-nav-link>
+                        </div>
+                    @else
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="/"
                                         :active="request()->routeIs('admin.dashboard')">
                                 {{ __('Produk') }}
                             </x-nav-link>
@@ -33,11 +39,12 @@
                             </x-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('admin.dashboard')"
+                            <x-nav-link href="/order"
                                         :active="request()->routeIs('admin.dashboard')">
                                 {{ __('Pesanan') }}
                             </x-nav-link>
                         </div>
+                    @endif
                 @endif
             </div>
 
