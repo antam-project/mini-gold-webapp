@@ -9,8 +9,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScrapperController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceController;
 use App\Models\Master\MasterProduct;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\QrCodeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PurchaseController;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -39,23 +42,32 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('chart')->group(function () {
         Route::get('', [ChartController::class, 'list'])->name('pages.chart.list');
-        Route::get('/new', [ChartController::class, 'new'])->name('pages.new.list');
-        Route::get('{id}/update', [ChartController::class, 'updatePage'])->name('admin.user.update.page');
-        Route::patch('{id}/update', [ChartController::class, 'update'])->name('admin.user.update');
-        Route::delete('{id}/delete', [ChartController::class, 'delete'])->name('admin.user.delete');
+        Route::get('/datatables', [ChartController::class, 'datatables'])->name('chart.datatables');
+        Route::post('/delete/{id}', [ChartController::class, 'deletfromchart'])->name('chart.delete');
+        Route::post('/checkout', [ChartController::class, 'checkout'])->name('checkout');
+        Route::post('/update/{id}/{quantity}', [ChartController::class, 'updateQuantity'])->name('chart.update');
+        Route::get('/new', [ChartController::class, 'new'])->name('chart.new');
     });
+
+    Route::get('/invoice-details/{params}', [InvoiceController::class, 'details'])->name('invoice.detail');
 
     Route::prefix('order')->group(function () {
-        Route::get('', [OrderController::class, 'list'])->name('admin.user.list');
-        Route::get('{id}/update', [OrderController::class, 'updatePage'])->name('admin.user.update.page');
-        Route::patch('{id}/update', [OrderController::class, 'update'])->name('admin.user.update');
-        Route::delete('{id}/delete', [OrderController::class, 'delete'])->name('admin.user.delete');
+        Route::get('', [PesananController::class, 'list'])->name('pages.order.list');
     });
+
+    Route::prefix('action')->group(function () {
+        Route::post('/addToChart', [HomeController::class, 'addToChart'])->name('action.addToChart');
+    });
+
+    // Route::prefix('order')->group(function () {
+    //     Route::get('', [OrderController::class, 'list'])->name('admin.user.list');
+    //     Route::get('{id}/update', [OrderController::class, 'updatePage'])->name('admin.user.update.page');
+    //     Route::patch('{id}/update', [OrderController::class, 'update'])->name('admin.user.update');
+    //     Route::delete('{id}/delete', [OrderController::class, 'delete'])->name('admin.user.delete');
+    // });
 });
 
-Route::get('qrcode', function () {
-    return QrCode::size(300)->generate('A basic example of QR code!');
-});
+// Route::get('qrcode', [QrCodeController::class, 'example']);
 
 Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
     Route::prefix('user')->group(function () {
@@ -68,6 +80,12 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
             Route::post('{idUser}', [UserController::class, 'addRole'])->name('admin.user.role.add');
             Route::delete('{idUser}/{idRole}', [UserController::class, 'deleteRole'])->name('admin.user.role.delete');
         });
+    });
+
+    Route::prefix('invoice')->group(function () {
+        Route::get('', [PesananController::class, 'invoice'])->name('admin.invoice.list');
+        Route::get('/sunting/{params}', [PesananController::class, 'details'])->name('admin.invoice.detail');
+        Route::get('/download/{params}', [PesananController::class, 'pdf'])->name('admin.invoice.pdf');
     });
 
     Route::prefix('konfirmasi-pembayaran')->group(function () {

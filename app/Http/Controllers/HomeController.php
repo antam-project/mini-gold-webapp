@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -15,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -35,5 +38,28 @@ class HomeController extends Controller
         (select max(created_at) from master_gold) "));
 
         return view('welcome')->with('golds', $golds);
+    }
+
+    public function addToChart(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'goldid' => 'required',
+            'quantity' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                        'error' => $validator->errors()->all()
+                    ]);
+        }
+
+        DB::table('chart_detail')->insert([
+            'user_id' => Auth::user()->id,
+            'gold_id' => $request->goldid,
+            'quantity' => $request->quantity,
+            'd_post' => Carbon::now()->toDateTimeString()
+        ]);
+
+        return response()->json(['success' => 'Post created successfully.']);
     }
 }

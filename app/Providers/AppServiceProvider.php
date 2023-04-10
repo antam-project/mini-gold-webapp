@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    public function encryptString($string)
+    {
+        return Crypt::encryptString($string);
+    }
+
     /**
      * Bootstrap any application services.
      *
@@ -24,7 +31,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        config(['app.locale' => 'id']);
+	    Carbon::setLocale('id');
         Blade::directive('currency', function ( $expression ) { return "Rp. <?php echo number_format($expression,0,',','.'); ?>"; });
+        Blade::directive('ubahlagi', function ( $expression ) { return $this->encryptString($expression); });
         //
     }
 }
