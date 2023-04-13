@@ -122,6 +122,14 @@ Route::prefix('admin')->middleware(['role:Admin'])->group(function () {
 
 })->name('admin');
 
+Route::get('/delivery', function () {
+    return view('admin.delivery.list');
+})->name('tanda terima barang');
+
+Route::get('/sertifikat', function () {
+    return view('dashboard');
+})->name('generate sertifikat');
+
 Route::prefix('purchase')->group(function () {
     Route::get('', [PurchaseController::class, 'invoice'])->name('purchase.invoice');
     Route::get('invoice', [PurchaseController::class, 'invoice'])->name('purchase.invoice');

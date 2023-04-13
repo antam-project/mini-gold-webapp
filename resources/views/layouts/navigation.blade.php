@@ -19,12 +19,6 @@
                                 {{ __('Dasbor') }}
                             </x-nav-link>
                         </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link href="/admin/invoice"
-                                        :active="request()->routeIs('admin.invoice')">
-                                {{ __('Invoice') }}
-                            </x-nav-link>
-                        </div>
                     @else
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-nav-link href="/"
@@ -43,6 +37,24 @@
                                         :active="request()->routeIs('admin.dashboard')">
                                 {{ __('Pesanan') }}
                             </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="/chart/new"
+                                        :active="request()->routeIs('admin.invoice.list')">
+                                {{ __('Invoice') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="/sertifikat"
+                                        :active="request()->routeIs('admin.dashborad')">
+                                {{ __('Generate Sertifikat') }}
+                            </x-nav-link>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <x-nav-link href="/delivery"
+                                            :active="request()->routeIs('admin.delivery.list')">
+                                    {{ __('Tanda Terima Barang') }}
+                                </x-nav-link>
+                            </div>
                         </div>
                     @endif
                 @endif

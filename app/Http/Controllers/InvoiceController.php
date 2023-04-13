@@ -17,6 +17,32 @@ use Illuminate\Support\Facades\Crypt;
 
 class InvoiceController extends Controller
 {
+    public function invoice()
+    {
+        $order = DB::select(DB::raw("select
+                                        row_number() over(
+                                        order by id) as nomor,
+                                        id as id,
+                                        DATE_FORMAT(invoice_date , '%Y-%m-%d %H:%i') as tanggal_transaksi,
+                                        DATE_FORMAT(due_date , '%Y-%m-%d %H:%i') as tanngal_sampai,
+                                        address as alamat_tujuan,
+                                        message as message,
+                                        v_total as jumlahtrx,
+                                        (case
+                                            when (select 1 from `transaction` t where invoice_id = ui.id) = 1
+                                                then (select transaction_status  from `transaction` where invoice_id = ui.id)
+                                            else '0'
+                                        end) as status
+                                    from
+                                        user_invoice ui"));
+
+        $order = collect($order)->map(function ($order) {
+            $order->id = encrypt($order->id);
+            return $order;
+        })->toArray();
+
+        return view('admin.invoice.list', ['order'=>$order]);
+    }
 
     public function details($param)
     {
